@@ -1,2 +1,2 @@
 # Programming-Docs
-Some programming tools, docs and information
+I'm going to collect here some programming tools, docs and information that I daily use.
