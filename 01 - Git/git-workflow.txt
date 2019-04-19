@@ -1,0 +1,55 @@
+** Init a new local git repository
+
+mkdir <folder>; cd <folder>
+
+git config --global user.name "seagull"
+git config --global user.email "seagull@tradeserver01"
+
+touch README.md .gitignore
+echo "Empty project" >> README.md
+
+git init
+git remote add origin git@tradeserver01:seagull/tfoll.git
+git remote -v
+
+git add README.md .gitignore
+git commit -m "First commit - Empty project - v0"
+git tag -a v0.0.0 -m "version 0.0.0 (empty project)"
+git push -u origin master
+git push -u origin --tags
+
+git checkout -b develop master
+git push -u origin develop 
+
+** Create a feature branch
+
+git checkout -b myfeature develop
+git push -u origin myfeature 
+
+** Incorporating a finished feature on develop
+
+git checkout develop
+git merge --no-ff myfeature
+git push origin develop
+
+** Create a release branch
+
+git checkout -b release-0.1 develop
+(./bump-version.sh 1.2)
+git commit -a -m "Bumped version number to 0.1"
+
+** Finishing a release branch
+
+git checkout master
+git merge --no-ff release-0.1
+git tag -a v0.1 -m "version 0.1"
+git push origin master
+
+git checkout develop
+git merge --no-ff release-0.1
+git push origin develop
+
+git checkout master
+git push origin master
+
+git push origin --tags
