@@ -4,6 +4,8 @@
 ## ** the script is executed in dom0
 ## ** it assumes an already configured rsync in VM
 ## ** it assumes the script backup-vault.sh in VM will execute the backup
+##
+## ** 2020, Gabriele LUCULLI
 ## ----------------------------------------------------------------------------------
 #!/bin/bash
 
