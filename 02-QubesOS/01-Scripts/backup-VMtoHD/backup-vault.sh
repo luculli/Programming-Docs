@@ -3,6 +3,8 @@
 ## 
 ## ** this part of the script is executed in VM but it is called by dom0
 ##    after setting up the required environment
+##
+## ** 2020, Gabriele LUCULLI
 ## ----------------------------------------------------------------------------------
 #!/bin/bash
 
