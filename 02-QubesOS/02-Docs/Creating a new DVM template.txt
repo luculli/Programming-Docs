@@ -4,3 +4,12 @@
 2. check the available VM templates by: ls /var/lib/qubes/vm-templates/
 3. create the default DVM template based on a given VM template: qvm-create-default-dvm <VM-Template-Name> --default-script
 4. set the template as default dvm: qvm-prefs <DVM-Template-Name> template_for_dispvms True
+
+** How to have stable customization of an application (e.g. firefox) for a DVM
+1. user@dom0 $ qvm-create-default debian-8
+2. user@dom0 $ qvm-run -a debian-8-dvm gnome-terminal
+3. user@debian-8-dvm $ firefox # customize firefox here
+4. user@debian-8-dvm $ # any other dvm customizations here
+5. user@debian-8-dvm $ touch /home/user/.qubes-dispvm-customized
+6. user@debian-8-dvm $ poweroff
+7. user@dom0 $ qvm-create-default-dvm debian-8
