@@ -1,0 +1,6 @@
+** How to create a new DVM template in the case the old one is corrupted or you want o have it from a new VM tempalte
+
+1. open a terminal in dom0
+2. check the available VM templates by: ls /var/lib/qubes/vm-templates/
+3. create the default DVM template based on a given VM template: qvm-create-default-dvm <VM-Template-Name> --default-script
+
