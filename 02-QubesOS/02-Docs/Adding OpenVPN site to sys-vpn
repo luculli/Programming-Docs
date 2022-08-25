@@ -1,0 +1,6 @@
+** How to add a new OpenVPN server to the network interface of an already existing sys-vpn machine in Qubes 3.2
+
+1. open a terminal in the sys-vpn machine
+2. download or transfer the openvpn config file (e.g. ch01.nordvpn.com.tcp.ovpn)
+3. nmcli connection import type openvpn file /path/to/your.ovpn
+4. open the new created connection in the network connection window (up right corner) and set the login/pwd
